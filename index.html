@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>个人简历 · 林一</title>
+    <!-- 引入字体 Inter 与 工作用字 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 图标库 (v6 免费版) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ---------- 全局重置与亮色系基调 ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fbfcfe; /* 极浅的蓝白基底，明亮通透 */
+            color: #1e2b3c;
+            line-height: 1.5;
+            padding: 40px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 高级感柔光背景装饰（非模板化细节） */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: -5%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(208, 228, 255, 0.5) 0%, rgba(255, 240, 245, 0) 70%);
+            border-radius: 50%;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -5%;
+            right: -5%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, rgba(255, 241, 224, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* 主卡片容器 */
+        .resume {
+            max-width: 1280px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);  /* 玻璃态高级感 */
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 52px;
+            box-shadow: 
+                0 30px 60px -20px rgba(0, 20, 40, 0.15),
+                0 10px 30px -10px rgba(0, 0, 0, 0.05),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+            padding: 48px 56px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        /* 网格布局——非对称但整齐，避免模板感 */
+        .grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr 1fr;
+            gap: 32px 36px;
+        }
+
+        /* 每个卡片区域 */
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 32px;
+            padding: 28px 28px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 16px 32px -12px rgba(30, 50, 80, 0.12);
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* 姓名大区块占据第一行左侧，跨两列视觉 */
+        .hero {
+            grid-column: 1 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 12px 0 12px 16px;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: #0b1e2e;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #0b1e2e 0%, #2a4b6e 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subhead {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 36px;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: #3a5670;
+            margin-top: 6px;
+        }
+
+        .hero .subhead span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 4px 14px 4px 10px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .hero .subhead i {
+            color: #5a7ea0;
+            font-size: 1.1rem;
+            width: 1.6rem;
+            text-align: center;
+        }
+
+        /* 卡片通用标题 */
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #4b6b8a;
+            margin-bottom: 22px;
+            border-bottom: 1.5px dashed rgba(90, 126, 160, 0.25);
+            padding-bottom: 12px;
+        }
+
+        .card-title i {
+            font-size: 1.2rem;
+            color: #3f688b;
+            background: #e9f0f7;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            box-shadow: inset 0 1px 3px rgba(255,255,255,0.7), 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* 想参与的项目和岗位 内容样式 */
+        .role-items {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .role-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .role-item .role-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6e8ba6;
+            letter-spacing: 0.03em;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .role-item .role-desc {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1a3145;
+            background: #ffffffcc;
+            padding: 10px 18px;
+            border-radius: 100px;
+            border: 1px solid #ffffff;
+            box-shadow: 0 2px 12px -6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .role-desc i {
+            color: #5a8ab0;
+            margin-right: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* 技能标签 */
+        .skillset {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 14px;
+        }
+
+        .skill-badge {
+            background: white;
+            border-radius: 60px;
+            padding: 9px 22px 9px 18px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1e3b53;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 0 0 1px #ffffff, 0 0 0 1px rgba(120, 160, 200, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.15s ease;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .skill-badge i {
+            color: #4f7a9e;
+            font-size: 0.9rem;
+        }
+
+        .skill-badge:hover {
+            background: #ffffff;
+            box-shadow: 0 8px 18px -8px rgba(50, 90, 140, 0.25), 0 0 0 1px rgba(100, 150, 210, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* 每周可投入时间 - 突出显示 */
+        .time-commit {
+            background: linear-gradient(145deg, #ffffff, #f6faff);
+            border-radius: 28px;
+            padding: 24px 28px;
+            box-shadow: inset 0 2px 8px rgba(255,255,255,0.9), 0 6px 18px -6px rgba(70, 110, 160, 0.2);
+            border: 1px solid #fff;
+            margin-top: 6px;
+        }
+
+        .time-commit .hours {
+            font-size: 3.4rem;
+            font-weight: 700;
+            color: #2d5a7e;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .time-commit .hours small {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #6b8fae;
+            letter-spacing: 0;
+        }
+
+        .time-commit .week-detail {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 0.95rem;
+            color: #3e5e7c;
+        }
+
+        .time-commit .week-detail span {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 6px 16px;
+            border-radius: 60px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            border: 1px solid #ffffff;
+        }
+
+        /* 作品集 */
+        .works-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .work-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(140, 180, 220, 0.2);
+        }
+
+        .work-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .work-item .work-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1f3c56;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .work-item .work-title i {
+            color: #6d9bc3;
+            font-size: 0.9rem;
+        }
+
+        .work-item .work-desc {
+            font-size: 0.93rem;
+            color: #4f6b84;
+            padding-left: 24px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .work-item .work-link {
+            padding-left: 24px;
+            font-size: 0.85rem;
+            color: #6a8fb0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2px;
+        }
+
+        .work-link i {
+            font-size: 0.75rem;
+        }
+
+        /* 想要加入的原因 */
+        .reason-content {
+            font-size: 1rem;
+            color: #274257;
+            line-height: 1.7;
+        }
+
+        .reason-content p {
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 12px 16px;
+            border-radius: 18px;
+            border-left: 4px solid #8db3d0;
+            backdrop-filter: blur(4px);
+        }
+
+        .reason-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 布局微调：根据网格分配 */
+        .grid .card:nth-child(2) {  /* 想参与的项目和岗位 */
+            grid-column: 3 / 4;
+            grid-row: 1 / 3;
+            /* 让它纵向稍高，自然填充 */
+        }
+
+        .grid .card:nth-child(3) {  /* 掌握的技能 */
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+        }
+
+        .grid .card:nth-child(4) {  /* 每周可投入时间 */
+            grid-column: 2 / 3;
+            grid-row: 2 / 4;
+        }
+
+        .grid .card:nth-child(5) {  /* 作品 */
+            grid-column: 1 / 2;
+            grid-row: 4 / 6;
+        }
+
+        .grid .card:nth-child(6) {  /* 想要加入的原因 */
+            grid-column: 2 / 4;
+            grid-row: 4 / 6;
+        }
+
+        /* 但 hero 占 1/3 列，我们需要重新调整网格区域 */
+        .grid {
+            grid-template-areas: 
+                "hero hero role"
+                "skills time role"
+                "skills time role"
+                "works works reason"
+                "works works reason";
+        }
+
+        .hero { grid-area: hero; }
+        .card-role { grid-area: role; }
+        .card-skills { grid-area: skills; }
+        .card-time { grid-area: time; }
+        .card-works { grid-area: works; }
+        .card-reason { grid-area: reason; }
+
+        /* 保持原有卡片内边距一致 */
+        .card-role, .card-skills, .card-time, .card-works, .card-reason {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 名字下面的一行联系方式（点缀） */
+        .hero-contact {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            font-size: 0.95rem;
+            color: #3a5b7a;
+        }
+
+        .hero-contact i {
+            width: 1.5rem;
+            color: #50779b;
+        }
+
+        /* 一些额外的装饰细节 */
+        .card-role .role-items {
+            flex: 1;
+        }
+
+        /* 响应式：PC优先，但保留一定弹性 */
+        @media screen and (max-width: 1000px) {
+            .resume {
+                padding: 32px 28px;
+            }
+            .hero h1 {
+                font-size: 3.4rem;
+            }
+            .grid {
+                gap: 24px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            body {
+                padding: 20px 12px;
+            }
+            .resume {
+                padding: 24px 18px;
+                border-radius: 32px;
+            }
+            .grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero {
+                padding: 0;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero .subhead {
+                font-size: 1.1rem;
+                gap: 12px;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .time-commit .hours {
+                font-size: 2.6rem;
+            }
+        }
+
+        /* 自定义小点缀：让部分图标旋转一点 */
+        .fa-regular, .fas, .far {
+            pointer-events: none;
+        }
+
+        /* 给 hero 增加一点右侧的渐变光线 */
+        .hero {
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            height: 70%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(140, 180, 220, 0.3), transparent);
+        }
+
+        /* 作品链接样式，更像真实作品集 */
+        .work-link a {
+            color: #5881a5;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #aac3d9;
+        }
+
+        .work-link a:hover {
+            color: #2d5a7e;
+            border-bottom: 1px solid #2d5a7e;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- 直接使用 grid 布局，但为了语义使用div，并用grid-area分配 -->
+        <div class="grid">
+            <!-- 1. 姓名，年级，专业 (hero) -->
+            <div class="hero">
+                <h1>林一</h1>
+                <div class="subhead">
+                    <span><i class="fas fa-graduation-cap"></i> 大三 · 计算机科学与技术</span>
+                    <span><i class="fas fa-code"></i> 全栈开发方向</span>
+                </div>
+                <div class="hero-contact">
+                    <span><i class="far fa-envelope"></i> yi.lin@edu.cn</span>
+                    <span><i class="fas fa-map-pin"></i> 上海 · 随时到岗</span>
+                </div>
+            </div>
+
+            <!-- 2. 想参与的项目和岗位 -->
+            <div class="card card-role">
+                <div class="card-title">
+                    <i class="fas fa-bullseye"></i> 目标项目 & 岗位
+                </div>
+                <div class="role-items">
+                    <div class="role-item">
+                        <span class="role-label">项目方向</span>
+                        <div class="role-desc"><i class="fas fa-rocket"></i>  AI 驱动的内容生成平台</div>
+                    </div>
+                    <div class="role-item">
+                        <span class="role-label">意向岗位</span>
+                        <div class="role-desc"><i class="fas fa-laptop-code"></i> 全栈开发实习生</div>
+                    </div>
+                    <div class="role-item">
+                        <span class="role-label">备选岗位</span>
+                        <div class="role-desc"><i class="fas fa-paint-brush"></i> 前端开发 / 产品工程</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 掌握的技能 -->
+            <div class="card card-skills">
+                <div class="card-title">
+                    <i class="fas fa-cog"></i> 技术栈 & 能力
+                </div>
+                <div class="skillset">
+                    <span class="skill-badge"><i class="fab fa-react"></i> React</span>
+                    <span class="skill-badge"><i class="fab fa-vuejs"></i> Vue 3</span>
+                    <span class="skill-badge"><i class="fab fa-node-js"></i> Node.js</span>
+                    <span class="skill-badge"><i class="fas fa-database"></i> PostgreSQL</span>
+                    <span class="skill-badge"><i class="fab fa-python"></i> Python / Flask</span>
+                    <span class="skill-badge"><i class="fas fa-code-branch"></i> Git / CI</span>
+                    <span class="skill-badge"><i class="fas fa-cloud"></i> Docker 基础</span>
+                    <span class="skill-badge"><i class="fas fa-mobile-alt"></i> 响应式设计</span>
+                    <span class="skill-badge"><i class="fas fa-chart-line"></i> 数据分析 (Pandas)</span>
+                </div>
+                <!-- 加一个小标签说明语言 -->
+                <div style="margin-top: 22px; font-size: 0.9rem; color: #547595; display: flex; gap: 24px; flex-wrap: wrap;">
+                    <span><i class="fas fa-check-circle" style="color: #6fa3c9;"></i> 英语 CET-6 · 技术文档读写</span>
+                    <span><i class="fas fa-check-circle" style="color: #6fa3c9;"></i> 团队协作 · 敏捷开发</span>
+                </div>
+            </div>
+
+            <!-- 4. 每周可投入时间 -->
+            <div class="card card-time">
+                <div class="card-title">
+                    <i class="fas fa-clock"></i> 每周可投入时间
+                </div>
+                <div class="time-commit">
+                    <div class="hours">
+                        32 <small>小时 / 周</small>
+                    </div>
+                    <div class="week-detail">
+                        <span><i class="far fa-calendar-alt"></i> 周一至周五 18:00–22:00</span>
+                        <span><i class="fas fa-sun"></i> 周末全天 10:00–18:00</span>
+                    </div>
+                    <div style="margin-top: 16px; font-size: 0.92rem; color: #567a9c; background: #e5efff60; padding: 8px 12px; border-radius: 14px;">
+                        <i class="fas fa-bolt" style="color: #6088b0;"></i> 可保证 6 个月稳定投入，接受灵活调配。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. 作品 -->
+            <div class="card card-works">
+                <div class="card-title">
+                    <i class="fas fa-folder-open"></i> 作品精选
+                </div>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <div class="work-title"><i class="fas fa-palette"></i> 色彩实验室 · 交互式调色板</div>
+                        <div class="work-desc">基于 React + Canvas 的动态配色工具，支持实时预览与导出，周活 200+。</div>
+                        <div class="work-link"><i class="fas fa-link"></i> <a href="#">colorlab.demo</a></div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-title"><i class="fas fa-chart-pie"></i> 校园二手书交易平台</div>
+                        <div class="work-desc">全栈项目 (Vue3 + Node + MongoDB)，包含身份验证、搜索和即时通讯。</div>
+                        <div class="work-link"><i class="fab fa-github"></i> <a href="#">github.com/linyi/bookswap</a></div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-title"><i class="fas fa-robot"></i> AI 摘要助手 (浏览器扩展)</div>
+                        <div class="work-desc">使用 OpenAI API 与 Plasmo 框架，为长文生成摘要，已上架 Chrome 商店。</div>
+                        <div class="work-link"><i class="fas fa-puzzle-piece"></i> <a href="#">chrome 扩展商店</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. 想要加入的原因 -->
+            <div class="card card-reason">
+                <div class="card-title">
+                    <i class="fas fa-heart"></i> 想要加入的原因
+                </div>
+                <div class="reason-content">
+                    <p>
+                        <i class="fas fa-quote-left" style="color: #8eb3d0; margin-right: 8px;"></i>
+                        贵团队在 AI 与开发者工具领域的探索与我个人的技术热情高度契合。我持续关注贵司的产品迭代，特别是最近发布的低代码引擎，让我看到工程与创造力的完美结合。
+                    </p>
+                    <p>
+                        <i class="fas fa-quote-left" style="color: #8eb3d0; margin-right: 8px;"></i>
+                        我期待在一个注重代码质量、鼓励创新的环境中贡献自己的全栈能力，同时向资深工程师学习，快速成长为能够独当一面的开发者。
+                    </p>
+                    <p>
+                        <i class="fas fa-quote-left" style="color: #8eb3d0; margin-right: 8px;"></i>
+                        每周 32 小时的投入能让我深度参与项目，而不仅仅停留在表面。我渴望将学校里的理论转化为实际产品，并与团队一起创造价值。
+                    </p>
+                </div>
+                <!-- 签名装饰 -->
+                <div style="margin-top: 18px; text-align: right; font-size: 0.9rem; color: #6688a8; letter-spacing: 0.5px;">
+                    <i class="fas fa-feather-alt"></i> 随时准备启程
+                </div>
+            </div>
+        </div>
+        <!-- 底部极简装饰 -->
+        <div style="display: flex; justify-content: flex-end; margin-top: 28px; font-size: 0.75rem; color: #93adc7; gap: 24px;">
+            <span><i class="far fa-copyright"></i> 个人简历 · 林一</span>
+            <span>更新于 2025 · 春</span>
+        </div>
+    </div>
+</body>
+</html>
