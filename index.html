@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI算法工程师 | 个人主页</title>
+    <title>AI算法 | 个人主页</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,128 +53,190 @@
     </style>
 </head>
 <body class="font-inter text-slate-800 antialiased">
-    <!-- 首屏大标题区域 -->
+    <!-- 1.首屏大标题：姓名，年级，专业 -->
     <section class="min-h-screen flex items-center px-[8%]">
         <div class="max-w-4xl">
-            <p class="text-primary font-medium tracking-widest mb-4">AI ALGORITHM ENGINEER</p>
+            <p class="text-primary font-medium tracking-widest mb-4">CANDIDATE INFO</p>
             <h1 class="text-[clamp(3rem,6vw,5rem)] font-bold leading-tight text-balance">
-                你好，我是<span class="text-primary">XXX</span>
+                你好，我是<span class="text-primary">卢怡敏</span>
             </h1>
             <p class="text-xl md:text-2xl text-muted mt-6 max-w-2xl leading-relaxed">
-                专注大模型、计算机视觉 / 多模态算法研发，擅长模型训练、微调与工程落地。
-                致力于将前沿AI算法转化为可落地的产品能力。
+                大一 · 计算机科学与技术专业<br>
+                意向参与AI算法相关科研与项目
             </p>
             <div class="mt-10 flex gap-5">
-                <a href="#project" class="bg-primary text-white px-8 py-4 rounded-lg font-medium card-hover">浏览项目</a>
+                <a href="#target" class="bg-primary text-white px-8 py-4 rounded-lg font-medium card-hover">意向项目</a>
                 <a href="#contact" class="border border-slate-300 px-8 py-4 rounded-lg font-medium card-hover">联系我</a>
             </div>
         </div>
     </section>
 
-    <!-- 个人优势模块 - 卡片布局 -->
-    <section class="px-[8%] section-padding bg-light">
+    <!-- 2.想参与的项目（删除意向岗位卡片，只保留意向参与项目） -->
+    <section id="target" class="px-[8%] section-padding bg-light">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
-                <p class="text-primary font-medium tracking-widest mb-3">CORE SKILLS</p>
-                <h2 class="text-4xl font-bold">个人优势</h2>
-                <p class="text-muted mt-4 max-w-2xl">算法、工程与业务理解结合，聚焦模型全链路研发</p>
+                <p class="text-primary font-medium tracking-widest mb-3">TARGET PROJECT</p>
+                <h2 class="text-4xl font-bold">意向项目</h2>
+                <p class="text-muted mt-4 max-w-2xl">希望参与的研究方向</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="cardBg rounded-2xl p-8 card-shadow card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">意向参与项目</h3>
+                    <p class="text-muted leading-relaxed">
+                        AI算法和前后端开发
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3.掌握的技能（修改文字：具备python基础，愿意深入学习llm和agent,计算机视觉） -->
+    <section class="px-[8%] section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <p class="text-primary font-medium tracking-widest mb-3">SKILLS</p>
+                <h2 class="text-4xl font-bold">掌握技能</h2>
+                <p class="text-muted mt-4 max-w-2xl">编程语言、相关学习方向</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 卡片1 -->
+                <!-- 技能卡片1 -->
                 <div class="cardBg rounded-2xl p-8 card-shadow card-hover">
                     <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="21 12 16.5 14.6 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">大模型 & 微调</h3>
+                    <h3 class="text-xl font-semibold mb-3">编程基础</h3>
                     <p class="text-muted leading-relaxed">
-                        LLM/多模态模型微调、LoRA/QLoRA、SFT，熟悉模型推理加速、上下文工程，有RAG系统落地经验。
+                        具备Python基础，了解基础代码编写与数据处理。
                     </p>
                 </div>
-                <!-- 卡片2 -->
+                <!-- 技能卡片2 -->
                 <div class="cardBg rounded-2xl p-8 card-shadow card-hover">
                     <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">深度学习框架</h3>
+                    <h3 class="text-xl font-semibold mb-3">学习方向</h3>
                     <p class="text-muted leading-relaxed">
-                        Pytorch、TensorFlow；熟悉数据处理、模型训练、评估指标，熟练使用HuggingFace生态。
+                        愿意深入学习LLM与Agent相关技术。
                     </p>
                 </div>
-                <!-- 卡片3 -->
+                <!-- 技能卡片3 -->
                 <div class="cardBg rounded-2xl p-8 card-shadow card-hover">
                     <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">算法工程落地</h3>
+                    <h3 class="text-xl font-semibold mb-3">计算机视觉</h3>
                     <p class="text-muted leading-relaxed">
-                        Python后端、模型部署、性能调优，GPU资源调度，能独立完成从实验验证到线上部署全流程。
+                        希望系统学习计算机视觉相关算法，动手完成相关实验。
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 精选项目模块 -->
-    <section id="project" class="px-[8%] section-padding">
+        <!-- 4.每周可投入时间 -->
+    <section class="px-[8%] section-padding bg-light">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
-                <p class="text-primary font-medium tracking-widest mb-3">SELECTED PROJECTS</p>
-                <h2 class="text-4xl font-bold">精选项目</h2>
-                <p class="text-muted mt-4 max-w-2xl">代表性AI算法项目，涵盖模型研发、实验与落地成果</p>
+                <p class="text-primary font-medium tracking-widest mb-3">TIME COMMITMENT</p>
+                <h2 class="text-4xl font-bold">每周可投入时间</h2>
+                <p class="text-muted mt-4 max-w-2xl">稳定可用于项目研发的时间</p>
             </div>
-
-            <div class="space-y-16">
-                <!-- 项目1 -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 bg-slate-100 rounded-2xl h-80 overflow-hidden flex items-center justify-center">
-                        <p class="text-muted">项目预览图区域（可替换图片）</p>
+            <div class="cardBg rounded-2xl p-10 card-shadow card-hover max-w-3xl">
+                <div class="flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     </div>
-                    <div class="lg:col-span-5">
-                        <span class="text-primary text-sm font-medium">大模型应用</span>
-                        <h3 class="text-2xl font-semibold mt-2">领域知识库RAG问答系统</h3>
-                        <p class="text-muted mt-4 leading-relaxed">
-                            基于开源大模型构建检索增强生成系统，优化文档分块、向量检索与Prompt策略，解决领域幻觉问题，落地企业内部文档问答。
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">时间安排</h3>
+                        <p class="text-muted leading-relaxed text-lg">
+                            每周可投入 <span class="text-primary font-bold">32小时</span>
                         </p>
-                        <div class="flex flex-wrap gap-2 mt-5">
-                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">LangChain</span>
-                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">向量数据库</span>
-                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">LLM微调</span>
+                        <div class="mt-4 space-y-4">
+                            <div class="bg-blue-50 rounded-xl p-4">
+                                <p>周一至周五：没课时间段</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4">
+                                <p>周末全天：10:00–18:00</p>
+                            </div>
+                            <div class="bg-blue-100 rounded-xl p-4">
+                                <p>可保证6个月稳定投入，接受灵活调配。</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- 项目2 -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-5 order-2 lg:order-1">
-                        <span class="text-primary text-sm font-medium">计算机视觉</span>
-                        <h3 class="text-2xl font-semibold mt-2">图像多模态识别算法</h3>
-                        <p class="text-muted mt-4 leading-relaxed">
-                            基于多模态预训练模型，完成图像理解、目标检测与图文匹配，优化小样本场景精度，完成模型轻量化推理。
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-5">
-                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">PyTorch</span>
-                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">CLIP</span>
-                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">小样本学习</span>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-7 order-1 lg:order-2 bg-slate-100 rounded-2xl h-80 overflow-hidden flex items-center justify-center">
-                        <p class="text-muted">项目预览图区域（可替换图片）</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 整屏底部联系方式 收尾页 -->
+        <!-- 5.作品（改为项目网页链接展示） -->
+    <section id="works" class="px-[8%] section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <p class="text-primary font-medium tracking-widest mb-3">WORKS</p>
+                <h2 class="text-4xl font-bold">作品展示</h2>
+                <p class="text-muted mt-4 max-w-2xl">个人完成的AI算法项目、实验与Demo</p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- 作品1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 rounded-2xl h-80 bg-blue-50 flex flex-col justify-center items-center card-shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 07.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        <p class="mt-4 text-muted">项目在线访问链接</p>
+                        <!-- 修改href引号内为你的项目网址 -->
+                        <a href="https://kanghr11.github.io/campus-cat-system/" target="_blank" class="mt-6 bg-primary text-white px-6 py-3 rounded-lg card-hover">
+                            访问项目
+                        </a>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <span class="text-primary text-sm font-medium">AI项目Demo</span>
+                        <h3 class="text-2xl font-semibold mt-2">项目名称一</h3>
+                        <p class="text-muted mt-4 leading-relaxed">
+                            项目简介：前段时间看见有人在抖音上寻找受伤猫咪，所以想要搭建一个能够收录校内流浪猫咪的网站，帮助更好的管理流浪猫。
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">PyTorch</span>
+                            <span class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full">LLM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6.想要加入的原因 -->
+    <section class="px-[8%] section-padding bg-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <p class="text-primary font-medium tracking-widest mb-3">MOTIVATION</p>
+                <h2 class="text-4xl font-bold">想要加入的原因</h2>
+            </div>
+            <div class="cardBg rounded-2xl p-10 card-shadow card-hover max-w-4xl">
+                <p class="text-muted leading-relaxed text-lg">
+                    我对ai算法以及前后端方向很感兴趣，希望能够在学长学姐的带领下更加深入学习，亲身参与项目实践，解决很多现实问题。我拥有较好的数学基础与编程功底，具备较强的钻研能力，遇到问题愿意查阅资料，持续尝试。我期待在项目组中向各位前辈学习算法思路和工程实践，在团队协作中积累项目经验，同时踏实完成分配的任务。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7.整屏底部联系方式 收尾页 -->
     <section id="contact" class="min-h-screen bg-slate-900 text-white px-[8%] flex items-center">
         <div class="max-w-4xl">
             <p class="text-blue-300 font-medium tracking-widest mb-4">CONTACT ME</p>
             <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight">
-                期待与你交流<br>AI算法相关机会
+                期待加入，与团队一起探索AI算法
             </h2>
             <p class="text-slate-300 mt-8 text-lg max-w-2xl leading-relaxed">
-                如果你对我的项目、算法能力感兴趣，或者有岗位、学术合作机会，欢迎随时联系。
+                如果你对我的背景、项目和时间安排感兴趣，欢迎随时联系。
             </p>
 
             <div class="mt-12 space-y-6">
@@ -184,7 +246,7 @@
                     </div>
                     <div>
                         <p class="text-slate-400 text-sm">邮箱</p>
-                        <p class="text-xl">xxx@example.com</p>
+                        <p class="text-xl">3140088013@qq.com</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
@@ -192,25 +254,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </div>
                     <div>
-                        <p class="text-slate-400 text-sm">Github</p>
-                        <p class="text-xl">github.com/yourname</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </div>
-                    <div>
-                        <p class="text-slate-400 text-sm">LinkedIn</p>
-                        <p class="text-xl">linkedin.com/in/yourname</p>
-                    </div>
                 </div>
             </div>
-            <p class="mt-20 text-slate-500 text-sm">© 2026 XXX · AI Algorithm Engineer</p>
+            <p class="mt-20 text-slate-500 text-sm">© 2026 XXX · AI Algorithm Candidate</p>
         </div>
     </section>
 
-    <!-- 简单滚动动画JS（可选，增强高级感） -->
+    <!-- 滚动入场动画 -->
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
